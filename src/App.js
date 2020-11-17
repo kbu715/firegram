@@ -7,13 +7,14 @@ import UploadForm from './comps/UploadForm';
 function App() {
 
   const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedId, setSelectedId] = useState(null);
 
   return (
     <div className="App">
       <Title/>
       <UploadForm />
-      <ImageGrid setSelectedImg={setSelectedImg} />
-      {selectedImg && <Modal setSelectedImg={setSelectedImg} selectedImg={selectedImg} />}
+      <ImageGrid setSelectedImg={setSelectedImg} setSelectedId={setSelectedId} />
+      {selectedImg && <Modal setSelectedImg={setSelectedImg} selectedImg={selectedImg} selectedId={selectedId} />}
     </div>
   );
 }
