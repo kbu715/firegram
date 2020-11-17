@@ -1,8 +1,9 @@
- import * as firebase from 'firebase/app';
- import 'firebase/storage';
- import 'firebase/firestore';
+import firebase from "firebase/app";
+import "firebase/firestore"; //firebase 데이터 베이스 사용 준비
+import "firebase/storage";
+
  // Your web app's Firebase configuration
-  var firebaseConfig = {
+  const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
     databaseURL: process.env.REACT_APP_DATABASE_URL,
@@ -14,7 +15,8 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  const projectStorage = firebase.storage();
-  const projectFirestore = firebase.firestore();
+  export const projectStorage = firebase.storage();
+  export const projectFirestore = firebase.firestore();
+  export const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-  export { projectFirestore, projectStorage };
+  // export { projectStorage, projectFirestore };
